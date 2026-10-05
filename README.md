@@ -110,6 +110,28 @@ uv run pytest showcase/a2_insurance/test_a2_insurance.py
 Free-text claim -> the model extracts a structured form -> code routes by severity -> a template answers.
 First showcase in the course's 4x4 matrix (row A: workflow, column: Insurance). See showcase/a2_insurance/README.md.
 
+## Session 11 — multi-provider calls
+
+```powershell
+git pull
+uv sync
+uv run jupyter lab module01/s11_providers.ipynb
+uv run pytest tests/test_s11.py          # checkpoint (offline-safe)
+```
+Pre-read: `module01/reading_providers.md`. You will need a free Gemini key today (aistudio.google.com) in
+addition to your existing Groq key — see `.env.example`. Terms: `module01/terms_s11.md`.
+
+## Session 12 — local and open models
+
+```powershell
+git pull
+uv sync
+ollama pull qwen2.5:7b          # a second local model, for comparison (do this at home)
+uv run jupyter lab module01/s12_local_models.ipynb
+uv run pytest tests/test_s12.py          # checkpoint (offline-safe)
+```
+Pre-read: `module01/reading_local_models.md`. Terms: `module01/terms_s12.md`.
+
 ## Layout
 ```
 module01/                   Session 9b notebook, helpers, pre-read
@@ -119,6 +141,8 @@ tests/test_setup.py         Session 2 checkpoint
 tests/test_s09.py           Session 9b checkpoint
 tests/test_s10.py           Session 10 checkpoint
 showcase/a2_insurance/      Showcase A2 (Insurance workflow) + its own tests
+tests/test_s11.py           Session 11 checkpoint
+tests/test_s12.py           Session 12 checkpoint
 cheatsheet/python-for-agents.md
 .env.example                copy to .env
 pyproject.toml              pinned dependencies (uv sync)
